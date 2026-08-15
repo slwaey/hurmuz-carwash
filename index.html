@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز هرمز للخدمات الشاملة | HURMUZ SERVICES</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0b2e59;
+            --accent-gold: #c5a059;
+            --light-bg: #f8f9fa;
+            --dark-text: #1a1a1a;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --success-green: #28a745;
+            --warning-orange: #ffc107;
+            --danger-red: #dc3545;
+            --info-cyan: #17a2b8;
+            --carpet-brown: #8b5a2b;
+            --home-green: #2e8b57;
+            --expense-purple: #6f42c1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 20px;
+        }
+
+        .logo-container img {
+            height: 85px;
+            width: 85px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .brand-name {
+            text-align: right;
+        }
+
+        .brand-name h1 {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .brand-name span {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-blue), #16427b);
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid var(--accent-gold);
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+
+        .admin-btn {
+            background: #111;
+            color: #fff;
+            border-color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(rgba(11, 46, 89, 0.85), rgba(11, 46, 89, 0.9)), url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero img {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 6px solid var(--accent-gold);
+            margin-bottom: 25px;
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.6);
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .hero img:hover {
+            transform: scale(1.03);
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h3 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        .public-service-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .pub-tab-btn {
+            padding: 12px 25px;
+            border: 2px solid var(--primary-blue);
+            background: white;
+            color: var(--primary-blue);
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pub-tab-btn.active, .pub-tab-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: 0 5px 15px rgba(11, 46, 89, 0.2);
+        }
+
+        .pub-tab-content {
+            display: none;
+        }
+
+        .pub-tab-content.active {
+            display: block;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            border-top: 4px solid var(--primary-blue);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--accent-gold);
+        }
+
+        .service-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 70px 20px;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .feature-item h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .contact-box {
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h4 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .info-item i {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            width: 30px;
+        }
+
+        /* --- قسم نظام الإدارة (Management Section) --- */
+        #admin-panel {
+            display: none;
+            background: #f0f4f8;
+            padding: 40px 20px;
+            margin-top: 80px;
+            min-height: 80vh;
+        }
+
+        .admin-container {
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 170px;
+            padding: 12px;
+            background: white;
+            border: 2px solid var(--primary-blue);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border-right: 5px solid var(--primary-blue);
+        }
+
+        .stat-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            margin-top: 5px;
+        }
+
+        .filter-bar {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-bar label {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .filter-bar select {
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 0.95rem;
+            font-weight: bold;
+        }
+
+        .admin-main-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 25px;
+        }
+
+        @media (max-width: 992px) {
+            .admin-main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-card, .table-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary-blue);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+
+        /* الجدول */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+
+        table th {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            display: inline-block;
+        }
+
+        .badge-waiting { background-color: var(--warning-orange); color: #000; }
+        .badge-washing { background-color: var(--info-cyan); }
+        .badge-ready { background-color: var(--success-green); }
+        .badge-done { background-color: #6c757d; }
+
+        .action-btn {
+            border: none;
+            padding: 5px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-left: 2px;
+        }
+
+        .btn-status { background: #e0e0e0; color: #333; }
+        .btn-print { background: var(--accent-gold); color: white; }
+        .btn-delete { background: var(--danger-red); color: white; }
+
+        /* Modal تسجيل الدخول */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #061a33;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h2 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero img { width: 190px; height: 190px; }
+            .admin-tabs, .public-service-tabs { flex-direction: column; }
+        }
+
+        @media print {
+            body * { visibility: hidden; }
+            #printable-receipt, #printable-receipt * { visibility: visible; }
+            #printable-receipt { position: absolute; left: 0; top: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.webp" alt="لوجو مغسلة هرمز" onerror="this.src='https://via.placeholder.com/85'">
+                <div class="brand-name">
+                    <h1>هرمز HURMUZ</h1>
+                    <span>خدمات المركبات والعناية بالمنزل VIP SERVICES</span>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showPublicSite()">الرئيسية</a></li>
+                <li><a href="#services" onclick="showPublicSite()">خدماتنا</a></li>
+                <li><a href="#why-us" onclick="showPublicSite()">مميزاتنا</a></li>
+                <li><a href="#contact" onclick="showPublicSite()">تواصل معنا</a></li>
+            </ul>
+
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button onclick="openLoginModal()" class="cta-btn admin-btn"><i class="fa-solid fa-lock"></i> الإدارة</button>
+                <a href="tel:00963962270432" class="cta-btn"><i class="fa-solid fa-phone"></i> اتصال</a>
+                <a href="https://wa.me/963962270432?text=أهلاً%20مغسلة%20هرمز،%20أود%20حجز%20موعد" target="_blank" class="cta-btn" style="background: #25D366; border-color: #25D366; color: white;">
+                    <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- أقسام الموقع العام (Public Web Sections) -->
+    <div id="public-site">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <img src="logo.webp" alt="لوجو هرمز الشعار المعتمد" onerror="this.src='https://via.placeholder.com/260'">
+                <h2>خدمات العناية الشاملة لمركبتك ومنزلك</h2>
+                <p>غسيل وتلميع السيارات، غسيل السجاد الآلي الحديث، وخدمات تنظيف واعتناء المنازل بأحدث المعدات</p>
+                <a href="#services" class="cta-btn" style="padding: 0.8rem 2rem; font-size: 1.1rem;">استكشف خدماتنا</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="section-title">
+                <h3>خدماتنا المتميزة</h3>
+            </div>
+
+            <!-- أزرار تبويب خدمات الصفحة الرئيسية -->
+            <div class="public-service-tabs">
+                <button class="pub-tab-btn active" onclick="switchPublicTab('wash-public')" id="pub-btn-wash">
+                    <i class="fa-solid fa-soap"></i> السيارات والدراجات
+                </button>
+                <button class="pub-tab-btn" onclick="switchPublicTab('oil-public')" id="pub-btn-oil">
+                    <i class="fa-solid fa-oil-can"></i> الزيوت والسوائل
+                </button>
+                <button class="pub-tab-btn" onclick="switchPublicTab('carpet-public')" id="pub-btn-carpet">
+                    <i class="fa-solid fa-rug"></i> غسيل السجاد
+                </button>
+                <button class="pub-tab-btn" onclick="switchPublicTab('home-public')" id="pub-btn-home">
+                    <i class="fa-solid fa-house-chimney-window"></i> تنظيف المنازل
+                </button>
+            </div>
+
+            <!-- محتوى تبويب 1: خدمات غسيل السيارات والدراجات -->
+            <div id="wash-public" class="pub-tab-content active">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="service1.webp" alt="غسيل خارجي" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                        <h4>غسيل خارجي احترافي للسيارات</h4>
+                        <p>غسيل بتقنية الرغوة الكثيفة وضغط الماء العالي مع التنظيف الدقيق للإطارات والهيكل الخارجي.</p>
+                    </div>
+                    <div class="service-card" style="border-top-color: var(--accent-gold);">
+                        <img src="service4.webp" alt="غسيل دراجات نارية" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                        <h4>🏍️ غسيل وتلميع الدراجات النارية</h4>
+                        <p>تنظيف دقيق ومحترف للأسطح الميكانيكية، السلاسل، والهيكل الخارجي للدراجة النارية مع المواد الحافظة.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="service4.webp" alt="تنظيف داخلي" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                        <h4>تنظيف وتفصيل الداخلي للسيارات</h4>
+                        <p>تنظيف الفرش والمقاعد بالفرشاة والمواد الخاصة، شفط الأتربة، وتعقيم التابلوه وفتحات التكييف.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="service7.webp" alt="تلميع وخدمات VIP" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                        <h4>تلميع وخدمات VIP</h4>
+                        <p>إزالة الشوائب، تلميع الطلاء الخارجي، وحماية الأسطح لإعطائها لمعاناً كالمصنع.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى تبويب 2: خدمات تغيير الزيت والسوائل -->
+            <div id="oil-public" class="pub-tab-content">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="service9.webp" alt="تغيير زيت المحرك" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                        <h4>تغيير زيت المحرك والفلتر للسيارات</h4>
+                        <p>توفير أفضل الزيوت العالمية (BM LOOP, Mannol) بعيارات متنوعة لكافة محركات السيارات.</p>
+                    </div>
+                    <div class="service-card" style="border-top-color: var(--accent-gold);">
+                        <img src="service1.webp" alt="تغيير زيت الدراجات النارية" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                        <h4>🏍️ تغيير زيت الدراجات النارية (4T / 2T)</h4>
+                        <p>زيوت مخصصة للدراجات النارية ذات أداء عالي تحمل درجات الحرارة العالية وحماية الدبرياج والمحرك.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="service4.webp" alt="ماء رادياتير" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                        <h4>تغيير سائل التبريد (أخضر / أحمر)</h4>
+                        <p>تفريغ وتعبئة ماء رادياتير أصلي مانع للتجمد والرغوة لحماية المحرك من الحرارة العالية.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="service7.webp" alt="صيانة السوائل الشاملة" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                        <h4>فحص وصيانة السوائل الشاملة</h4>
+                        <p>فحص زيت الفرامل، الباور، وتغيير جميع الفلاتر (زيت، هواء، تكييف) بأعلى معايير الجودة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى تبويب 3: خدمات غسيل السجاد -->
+            <div id="carpet-public" class="pub-tab-content">
+                <div class="services-grid">
+                    <div class="service-card" style="border-top-color: var(--carpet-brown);">
+                        <i class="fa-solid fa-rug" style="font-size: 3rem; color: var(--carpet-brown); margin-bottom: 15px;"></i>
+                        <h4>غسيل آلي للتنظيف والتجفيف</h4>
+                        <p>غسيل السجاد بآلات أوتوماتيكية متطورة ومواد شامبو مخصصة للحفاظ على جودة ولون الأنسجة.</p>
+                    </div>
+                    <div class="service-card" style="border-top-color: var(--carpet-brown);">
+                        <i class="fa-solid fa-truck-ramp-box" style="font-size: 3rem; color: var(--carpet-brown); margin-bottom: 15px;"></i>
+                        <h4>خدمة الاستلام والتسليم من الباب</h4>
+                        <p>استلام السجاد من منزلكم وإعادته مغسولاً ومعطراً ومغلفاً بالكامل فور الانتهاء.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى تبويب 4: خدمات تنظيف المنازل -->
+            <div id="home-public" class="pub-tab-content">
+                <div class="services-grid">
+                    <div class="service-card" style="border-top-color: var(--home-green);">
+                        <i class="fa-solid fa-broom" style="font-size: 3rem; color: var(--home-green); margin-bottom: 15px;"></i>
+                        <h4>تنظيف وتلميع منازل شامل</h4>
+                        <p>تنظيف الأرضيات والواجهات والشبابيك، وتعقيم كامل للمطابخ والحمامات بواسطة كادر متخصص.</p>
+                    </div>
+                    <div class="service-card" style="border-top-color: var(--home-green);">
+                        <i class="fa-solid fa-couch" style="font-size: 3rem; color: var(--home-green); margin-bottom: 15px;"></i>
+                        <h4>تنظيف الكنب والمفروشات بالبخار</h4>
+                        <p>إزالة الشوائب والبقع الصعبة من الكنب والستائر والمجالس بأجهزة التنظيف بالبخار الفعالة.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="why-us">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fa-solid fa-award"></i>
+                    <h5>جودة ممتازة</h5>
+                    <p>استخدام أفضل المواد والمنظفات الأصلية</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-user-check"></i>
+                    <h5>عمالة مدربة</h5>
+                    <p>فريق محترف للعناية بأدق التفاصيل</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <h5>سرعة ودقة</h5>
+                    <p>إنجاز العمل بأعلى معايير السرعة والكفاءة</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-star"></i>
+                    <h5>خدمات VIP</h5>
+                    <p>تجربة عناية ممتازة لمركبتك ومنزلك</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h4>زورونا اليوم أو تواصلوا معنا</h4>
+                    <p style="margin-bottom: 25px; color: #666;">نسعد بتقديم أفضل الخدمات الشاملة لكم في مركز هرمز.</p>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>الموقع: اللاذقية - الصناعة الجديدة - شارع المخفر - اول تقاطع - مقابل وكالة كيا </span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span dir="ltr">+963 962270432</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>نستقبلكم يومياً من الساعة 8:00 صباحاً حتى 10:00 مساءً</span>
+                    </div>
+                </div>
+                <div style="width: 100%; height: 280px; border-radius: 15px; overflow: hidden; border: 2px solid var(--accent-gold);">
+                    <iframe src="https://maps.google.com/maps?q=35.537917,35.846667&z=17&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- --- لوحة إدارة المركز (Dashboard) --- -->
+    <div id="admin-panel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2><i class="fa-solid fa-gauge-high"></i> لوحة إدارة مركز هرمز الشاملة</h2>
+                <button onclick="logoutAdmin()" class="cta-btn" style="background: var(--danger-red); border: none;">تسجيل الخروج</button>
+            </div>
+
+            <!-- تبويبات الأقسام لوحة الإدارة -->
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="switchAdminTab('wash')" id="tab-btn-wash">
+                    <i class="fa-solid fa-soap"></i> غسيل السيارات والدراجات
+                </button>
+                <button class="tab-btn" onclick="switchAdminTab('oil')" id="tab-btn-oil">
+                    <i class="fa-solid fa-oil-can"></i> الزيوت والسوائل
+                </button>
+                <button class="tab-btn" onclick="switchAdminTab('carpet')" id="tab-btn-carpet" style="border-color: var(--carpet-brown);">
+                    <i class="fa-solid fa-rug"></i> قسم غسيل السجاد
+                </button>
+                <button class="tab-btn" onclick="switchAdminTab('home')" id="tab-btn-home" style="border-color: var(--home-green);">
+                    <i class="fa-solid fa-house-chimney-window"></i> قسم تنظيف المنازل
+                </button>
+                <button class="tab-btn" onclick="switchAdminTab('expenses')" id="tab-btn-expenses" style="border-color: var(--expense-purple);">
+                    <i class="fa-solid fa-calculator"></i> الحسابات والمصروفات
+                </button>
+                <button class="tab-btn" onclick="switchAdminTab('attendance')" id="tab-btn-attendance" style="border-color: var(--info-cyan);">
+                    <i class="fa-solid fa-user-clock"></i> دوام العمال
+                </button>
+            </div>
+
+            <!-- TAB 1: قسم غسيل السيارات والدراجات -->
+            <div id="wash-tab" class="tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p>إجمالي مركبات الغسيل اليوم</p>
+                        <h3 id="stat-wash-total">0</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--warning-orange);">
+                        <p>قيد الغسيل الآن</p>
+                        <h3 id="stat-wash-active">0</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--success-green);">
+                        <p>دخل الغسيل الإجمالي</p>
+                        <h3><span id="stat-wash-income">0</span> ل.س</h3>
+                    </div>
+                </div>
+
+                <div class="admin-main-grid">
+                    <div class="form-card">
+                        <h3 style="margin-bottom: 15px; color: var(--primary-blue);"><i class="fa-solid fa-car-side"></i> تسجيل دخول للغسيل</h3>
+                        <form id="wash-car-form" onsubmit="handleAddWashCar(event)">
+                            <div class="form-group">
+                                <label>رقم اللوحة / أو المعرف</label>
+                                <input type="text" id="wash-car-plate" placeholder="مثال: اللاذقية 123456 أو موتور بدون لوحة" required>
+                            </div>
+                            <div class="form-group">
+                                <label>نوع المركبة / الموديل</label>
+                                <input type="text" id="wash-car-model" placeholder="مثال: كيا سيراتو بيضاء / دراجة سوزوكي" required>
+                            </div>
+                            <div class="form-group">
+                                <label>نوع خدمة الغسيل</label>
+                                <select id="wash-car-service" required>
+                                    <option value="غسيل سيارة خارجي احترافي">🚗 غسيل سيارة خارجي احترافي</option>
+                                    <option value="تنظيف سيارة داخلي وخارجي">🚗 تنظيف سيارة داخلي وخارجي</option>
+                                    <option value="تلميع سيارة شامل وخدمة VIP">🚗 تلميع سيارة شامل وخدمة VIP</option>
+                                    <option value="غسيل الصندوق والكامل للسيارة">🚗 غسيل الصندوق والكامل للسيارة</option>
+                                    <option value="🏍️ غسيل وتلميع دراجة نارية (موتور)">🏍️ غسيل وتلميع دراجة نارية (موتور)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>السعر (ل.س)</label>
+                                <input type="number" id="wash-car-price" placeholder="أدخل المبلغ" required>
+                            </div>
+                            <div class="form-group">
+                                <label>رقم هاتف الزبون (اختياري)</label>
+                                <input type="text" id="wash-car-phone" placeholder="09xxxxxxx">
+                            </div>
+                            <button type="submit" class="btn-submit"><i class="fa-solid fa-plus"></i> إضافة لقسم الغسيل</button>
+                        </form>
+                    </div>
+
+                    <div class="table-card">
+                        <h3 style="margin-bottom: 15px; color: var(--primary-blue);"><i class="fa-solid fa-list-check"></i> قائمة المركبات الحالية بالغسيل</h3>
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>اللوحة/المعرف</th>
+                                        <th>المركبة</th>
+                                        <th>الخدمة</th>
+                                        <th>السعر</th>
+                                        <th>الحالة</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="wash-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: قسم خدمات تغيير الزيت والماء -->
+            <div id="oil-tab" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p>إجمالي الزيوت والسوائل اليوم</p>
+                        <h3 id="stat-oil-total">0</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--warning-orange);">
+                        <p>قيد الخدمة الآن</p>
+                        <h3 id="stat-oil-active">0</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--success-green);">
+                        <p>دخل الزيوت الإجمالي</p>
+                        <h3><span id="stat-oil-income">0</span> ل.س</h3>
+                    </div>
+                </div>
+
+                <div class="admin-main-grid">
+                    <div class="form-card">
+                        <h3 style="margin-bottom: 15px; color: var(--primary-blue);"><i class="fa-solid fa-oil-can"></i> تسجيل تغيير زيت / ماء</h3>
+                        <form id="oil-car-form" onsubmit="handleAddOilCar(event)">
+                            <div class="form-group">
+                                <label>رقم اللوحة / أو المعرف</label>
+                                <input type="text" id="oil-car-plate" placeholder="مثال: اللاذقية 654321 / دراجة نارية" required>
+                            </div>
+                            <div class="form-group">
+                                <label>نوع المركبة / الموديل</label>
+                                <input type="text" id="oil-car-model" placeholder="مثال: هونداي سوناتا / دراجة هوندا 250" required>
+                            </div>
+                            <div class="form-group">
+                                <label>نوع الخدمة المطلوب تنفيذها</label>
+                                <select id="oil-car-service" required>
+                                    <option value="تغيير زيت المحرك للسيارة">🚗 تغيير زيت المحرك للسيارة</option>
+                                    <option value="تغيير زيت + فلتر للسيارة">🚗 تغيير زيت + فلتر الزيت للسيارة</option>
+                                    <option value="تغيير زيت القير (الهيدروليك)">🚗 تغيير زيت القير (الهيدروليك)</option>
+                                    <option value="🏍️ تغيير زيت دراجة نارية (4T)">🏍️ تغيير زيت دراجة نارية (4T Motor Oil)</option>
+                                    <option value="🏍️ تغيير زيت دراجة نارية (2T)">🏍️ تغيير زيت دراجة نارية (2T Motor Oil)</option>
+                                    <option value="🟢 تغيير / تزويد ماء رادياتير أخضر">🟢 تغيير / تزويد ماء رادياتير أخضر</option>
+                                    <option value="🔴 تغيير / تزويد ماء رادياتير أحمر">🔴 تغيير / تزويد ماء رادياتير أحمر</option>
+                                    <option value="صيانة كاملة (زيت + فلتر + ماء)">صيانة كاملة (زيت + فلتر + ماء رادياتير)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>الشركة المصنعة والقياس / العيار</label>
+                                <select id="oil-car-brand" required>
+                                    <optgroup label="زيوت الدراجات النارية - Motorbike Oils">
+                                        <option value="BM LOOP 4T - 10W-40 (دراجات)">بي إم لوب دراجات (BM LOOP 4T - 10W-40)</option>
+                                        <option value="BM LOOP 4T - 20W-50 (دراجات)">بي إم لوب دراجات (BM LOOP 4T - 20W-50)</option>
+                                        <option value="Mannol 4T - 10W-40 (دراجات)">مانول دراجات (Mannol 4T - 10W-40)</option>
+                                        <option value="Motul 4T - 10W-40 / 15W-50">موتول دراجات (Motul 4T)</option>
+                                        <option value="زيت دراجات 2T مخصص">زيت دراجات نارية 2T</option>
+                                    </optgroup>
+                                    <optgroup label="بي إم لوب سيارات - BM LOOP">
+                                        <option value="BM LOOP - 5W-30">بي إم لوب (BM LOOP - 5W-30)</option>
+                                        <option value="BM LOOP - 10W-40">بي إم لوب (BM LOOP - 10W-40)</option>
+                                        <option value="BM LOOP - 20W-50">بي إم لوب (BM LOOP - 20W-50)</option>
+                                        <option value="BM LOOP - 5W-40">بي إم لوب (BM LOOP - 5W-40)</option>
+                                    </optgroup>
+                                    <optgroup label="مانول سيارات - MANNOL">
+                                        <option value="Mannol - 5W-30 Synthetic">مانول (Mannol - 5W-30 Synthetic)</option>
+                                        <option value="Mannol - 10W-40 Semi-Synthetic">مانول (Mannol - 10W-40 Semi-Synth)</option>
+                                        <option value="Mannol - 15W-40 Heavy Duty">مانول (Mannol - 15W-40)</option>
+                                        <option value="Mannol - 75W-90 ATF / Gear">مانول قير (Mannol - 75W-90 ATF)</option>
+                                    </optgroup>
+                                    <optgroup label="شركات وماركات أخرى">
+                                        <option value="Shell Helix - 5W-30 / 10W-40">شيل هيليكس (Shell Helix)</option>
+                                        <option value="Total Energies - 10W-40">توتال إينرجيز (Total)</option>
+                                        <option value="Mobil 1 - 5W-30 / 5W-40">موبيل 1 (Mobil 1)</option>
+                                        <option value="ماء رادياتير أصلي (بدون زيت)">ماء رادياتير فقط (بدون زيت)</option>
+                                        <option value="نوع/شركة أخرى">نوع / شركة أخرى</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>السعر (ل.س)</label>
+                                <input type="number" id="oil-car-price" placeholder="أدخل المبلغ الإجمالي" required>
+                            </div>
+                            <div class="form-group">
+                                <label>رقم هاتف الزبون (اختياري)</label>
+                                <input type="text" id="oil-car-phone" placeholder="09xxxxxxx">
+                            </div>
+                            <button type="submit" class="btn-submit" style="background: var(--accent-gold); color: #000;"><i class="fa-solid fa-plus"></i> إضافة لقسم الزيوت</button>
+                        </form>
+                    </div>
+
+                    <div class="table-card">
+                        <h3 style="margin-bottom: 15px; color: var(--primary-blue);"><i class="fa-solid fa-list-check"></i> قائمة قسم تغيير الزيت والسوائل</h3>
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>اللوحة/المعرف</th>
+                                        <th>المركبة</th>
+                                        <th>الخدمة</th>
+                                        <th>الشركة / القياس</th>
+                                        <th>السعر</th>
+                                        <th>الحالة</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="oil-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: قسم غسيل السجاد -->
+            <div id="carpet-tab" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card" style="border-right-color: var(--carpet-brown);">
+                        <p>إجمالي طلبات السجاد</p>
+                        <h3 id="stat-carpet-total">0</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--warning-orange);">
+                        <p>طلبات قيد الغسيل/التجفيف</p>
+                        <h3 id="stat-carpet-active">0</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--success-green);">
+                        <p>دخل غسيل السجاد</p>
+                        <h3><span id="stat-carpet-income">0</span> ل.س</h3>
+                    </div>
+                </div>
+
+                <div class="admin-main-grid">
+                    <div class="form-card">
+                        <h3 style="margin-bottom: 15px; color: var(--carpet-brown);"><i class="fa-solid fa-rug"></i> تسجيل طلب غسيل سجاد</h3>
+                        <form id="carpet-form" onsubmit="handleAddCarpetOrder(event)">
+                            <div class="form-group">
+                                <label>اسم العميل</label>
+                                <input type="text" id="carpet-client-name" placeholder="أدخل اسم العميل الكامل" required>
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الجوال</label>
+                                <input type="text" id="carpet-phone" placeholder="09xxxxxxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label>العنوان والتفاصيل</label>
+                                <input type="text" id="carpet-address" placeholder="المنطقة - الشارع - تفاصيل العنوان" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>عدد السجادات المستلمة</label>
+                                    <input type="number" id="carpet-count" min="1" placeholder="العدد" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>تاريخ الاستلام</label>
+                                    <input type="date" id="carpet-receive-date" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>تاريخ التسليم المتوقع</label>
+                                    <input type="date" id="carpet-delivery-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>السعر الإجمالي (ل.س)</label>
+                                    <input type="number" id="carpet-price" placeholder="المبلغ" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>ملاحظات / مقاسات / أنواع السجاد</label>
+                                <textarea id="carpet-notes" rows="2" placeholder="أي تفاصيل أخرى كنوع السجاد أو بقع معينة"></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit" style="background: var(--carpet-brown);"><i class="fa-solid fa-plus"></i> إضافة طلب السجاد</button>
+                        </form>
+                    </div>
+
+                    <div class="table-card">
+                        <h3 style="margin-bottom: 15px; color: var(--carpet-brown);"><i class="fa-solid fa-list-check"></i> طلبات قسم غسيل السجاد</h3>
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>العميل والجوال</th>
+                                        <th>العنوان</th>
+                                        <th>العدد</th>
+                                        <th>تاريخ الاستلام/التسليم</th>
+                                        <th>السعر</th>
+                                        <th>الحالة</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="carpet-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: قسم تنظيف المنازل -->
+            <div id="home-tab" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card" style="border-right-color: var(--home-green);">
+                        <p>إجمالي حجوزات تنظيف المنازل</p>
+                        <h3 id="stat-home-total">0</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--warning-orange);">
+                        <p>حجوزات قيد التنفيذ</p>
+                        <h3 id="stat-home-active">0</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--success-green);">
+                        <p>دخل تنظيف المنازل</p>
+                        <h3><span id="stat-home-income">0</span> ل.س</h3>
+                    </div>
+                </div>
+
+                <div class="admin-main-grid">
+                    <div class="form-card">
+                        <h3 style="margin-bottom: 15px; color: var(--home-green);"><i class="fa-solid fa-house-chimney-window"></i> تسجيل حجز تنظيف منزل</h3>
+                        <form id="home-form" onsubmit="handleAddHomeOrder(event)">
+                            <div class="form-group">
+                                <label>اسم العميل</label>
+                                <input type="text" id="home-client-name" placeholder="اسم العميل الكامل" required>
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الجوال</label>
+                                <input type="text" id="home-phone" placeholder="09xxxxxxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label>عنوان المنزل بالتفصيل</label>
+                                <input type="text" id="home-address" placeholder="المنطقة - البناء - الطابق" required>
+                            </div>
+                            <div class="form-group">
+                                <label>نوع الخدمة المطلوبة</label>
+                                <select id="home-service-type" required>
+                                    <option value="تنظيف شامل للمنزل">🧹 تنظيف شامل للمنزل</option>
+                                    <option value="تنظيف كنب ومفروشات بالبخار">🛋️ تنظيف كنب ومفروشات بالبخار</option>
+                                    <option value="جلي وتلميع أرضيات ورخام">✨ جلي وتلميع أرضيات ورخام</option>
+                                    <option value="تنظيف واجهات ونوافذ">🪟 تنظيف واجهات ونوافذ</option>
+                                    <option value="تنظيف وتعقيم مطابخ وحمامات">🧼 تنظيف وتعقيم مطابخ وحمامات</option>
+                                    <option value="خدمة تنظيف بالساعة">⏱️ خدمة تنظيف بالساعة</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>حجم المنزل / الغرف</label>
+                                    <input type="text" id="home-size" placeholder="مثال: 3 غرف وصالة أو 150م²">
+                                </div>
+                                <div class="form-group">
+                                    <label>موعد التنفيذ (التاريخ والوقت)</label>
+                                    <input type="datetime-local" id="home-date" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>السعر الإجمالي (ل.س)</label>
+                                <input type="number" id="home-price" placeholder="المبلغ المتفق عليه" required>
+                            </div>
+                            <div class="form-group">
+                                <label>ملاحظات ورغبات العميل</label>
+                                <textarea id="home-notes" rows="2" placeholder="أي ملاحظات إضافية حول التجهيزات أو الكادر"></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit" style="background: var(--home-green);"><i class="fa-solid fa-plus"></i> تسجيل حجز تنظيف المنزل</button>
+                        </form>
+                    </div>
+
+                    <div class="table-card">
+                        <h3 style="margin-bottom: 15px; color: var(--home-green);"><i class="fa-solid fa-list-check"></i> جدول حجوزات تنظيف المنازل</h3>
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>العميل والجوال</th>
+                                        <th>العنوان</th>
+                                        <th>الخدمة/المساحة</th>
+                                        <th>تاريخ ووقت الموعد</th>
+                                        <th>السعر</th>
+                                        <th>الحالة</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="home-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: قسم الحسابات والمصروفات -->
+            <div id="expenses-tab" class="tab-content">
+                <!-- شريط تصفية النطاق الزمني -->
+                <div class="filter-bar">
+                    <i class="fa-solid fa-filter" style="color: var(--primary-blue);"></i>
+                    <label>عرض تقرير الحسابات لفترة:</label>
+                    <select id="financial-filter" onchange="renderDashboard()">
+                        <option value="all">عرض الكل (منذ البداية)</option>
+                        <option value="today" selected>دخل ومصروف اليوم</option>
+                        <option value="week">خلال هذا الأسبوع (7 أيام)</option>
+                        <option value="month">خلال هذا الشهر (30 يوم)</option>
+                    </select>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card" style="border-right-color: var(--success-green);">
+                        <p>إجمالي الإيرادات (كافة الأقسام)</p>
+                        <h3><span id="stat-total-income">0</span> ل.س</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--danger-red);">
+                        <p>إجمالي المصروفات</p>
+                        <h3><span id="stat-total-expenses">0</span> ل.س</h3>
+                    </div>
+                    <div class="stat-card" style="border-right-color: var(--accent-gold);">
+                        <p>صافي الربح النهائي</p>
+                        <h3><span id="stat-net-profit">0</span> ل.س</h3>
+                    </div>
+                </div>
+
+                <div class="admin-main-grid">
+                    <div class="form-card">
+                        <h3 style="margin-bottom: 15px; color: var(--expense-purple);"><i class="fa-solid fa-file-invoice-dollar"></i> تسجيل مصروف جديد</h3>
+                        <form id="expense-form" onsubmit="handleAddExpense(event)">
+                            <div class="form-group">
+                                <label>بند / نوع المصروف</label>
+                                <select id="expense-category" required>
+                                    <option value="ثمن عبوات زيت / زيت قير">🛢️ ثمن عبوات زيت / زيت قير</option>
+                                    <option value="ثمن سوائل تبريد ومياه رادياتير">🧪 ثمن سوائل تبريد ومياه رادياتير</option>
+                                    <option value="شراء منظفات وشامبو ومواد تلميع">🧼 شراء منظفات وشامبو ومواد تلميع</option>
+                                    <option value="أجور ورواتب العمال">👷 أجور ورواتب العمال</option>
+                                    <option value="فواتير كهرباء وماء">⚡ فواتير كهرباء وماء</option>
+                                    <option value="صيانة معدات وآلات">🔧 صيانة معدات وآلات المغسلة</option>
+                                    <option value="مصروفات تشغيلية أخرى">📦 مصروفات تشغيلية أخرى</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>البيان / الشرح بالتفصيل</label>
+                                <input type="text" id="expense-title" placeholder="مثال: شراء كرتونة زيت BM LOOP + 5 لتر شامبو" required>
+                            </div>
+                            <div class="form-group">
+                                <label>المبلغ المدفوع (ل.س)</label>
+                                <input type="number" id="expense-amount" placeholder="أدخل المبلغ" required>
+                            </div>
+                            <div class="form-group">
+                                <label>التاريخ</label>
+                                <input type="date" id="expense-date" required>
+                            </div>
+                            <button type="submit" class="btn-submit" style="background: var(--expense-purple);"><i class="fa-solid fa-plus"></i> إدخال لمصروفات المغسل</button>
+                        </form>
+                    </div>
+
+                    <div class="table-card">
+                        <h3 style="margin-bottom: 15px; color: var(--expense-purple);"><i class="fa-solid fa-chart-pie"></i> تفاصيل الدخل المجمع حسب الأقسام للفترة المحددة</h3>
+                        <div style="overflow-x: auto; margin-bottom: 25px;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>القسم</th>
+                                        <th>عدد الخدمات المنجزة</th>
+                                        <th>إجمالي الإيراد</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>🚗 غسيل السيارات والدراجات</td>
+                                        <td id="rep-wash-count">0</td>
+                                        <td><strong style="color: var(--success-green);" id="rep-wash-sum">0 ل.س</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>🛢️ تغيير الزيوت والسوائل</td>
+                                        <td id="rep-oil-count">0</td>
+                                        <td><strong style="color: var(--success-green);" id="rep-oil-sum">0 ل.س</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>🧶 غسيل السجاد</td>
+                                        <td id="rep-carpet-count">0 (قطع: <span id="rep-carpet-items">0</span>)</td>
+                                        <td><strong style="color: var(--success-green);" id="rep-carpet-sum">0 ل.س</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>🏠 تنظيف المنازل</td>
+                                        <td id="rep-home-count">0</td>
+                                        <td><strong style="color: var(--success-green);" id="rep-home-sum">0 ل.س</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 style="margin-bottom: 15px; color: var(--expense-purple);"><i class="fa-solid fa-receipt"></i> سجل المصروفات للفترة المحددة</h3>
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>التاريخ</th>
+                                        <th>البند</th>
+                                        <th>البيان / التفاصيل</th>
+                                        <th>المبلغ</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expenses-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 6: قسم إدارة دوام العمال -->
+            <div id="attendance-tab" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card" style="border-right-color: var(--info-cyan);">
+                        <p>عدد السجلات المسجلة بالدوام</p>
+                        <h3 id="stat-attendance-today">0</h3>
+                    </div>
+                </div>
+
+                <div class="admin-main-grid">
+                    <div class="form-card">
+                        <h3 style="margin-bottom: 15px; color: var(--info-cyan);"><i class="fa-solid fa-user-check"></i> تسجيل حضور / غياب عامل</h3>
+                        <form id="attendance-form" onsubmit="handleAddAttendance(event)">
+                            <div class="form-group">
+                                <label>اسم العامل</label>
+                                <input type="text" id="att-worker-name" placeholder="اسم العامل الكامل" required>
+                            </div>
+                            <div class="form-group">
+                                <label>تاريخ اليوم</label>
+                                <input type="date" id="att-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>حالة الحضور</label>
+                                <select id="att-status" required>
+                                    <option value="حاضر">✅ حاضر (دوام كامل)</option>
+                                    <option value="متأخر">⚠️ متأخر</option>
+                                    <option value="غائب">❌ غائب</option>
+                                    <option value="إجازة">🏖️ إجازة رسمية / مأجورة</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>وقت الحضور</label>
+                                    <input type="time" id="att-time-in">
+                                </div>
+                                <div class="form-group">
+                                    <label>وقت الانصراف</label>
+                                    <input type="time" id="att-time-out">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>ساعات التأخير / الإضافي / ملاحظات</label>
+                                <input type="text" id="att-notes" placeholder="مثال: تأخير 30 دقيقة / إضافة ساعة">
+                            </div>
+                            <button type="submit" class="btn-submit" style="background: var(--info-cyan); color:#000;"><i class="fa-solid fa-check"></i> حفظ بيانات الدوام</button>
+                        </form>
+                    </div>
+
+                    <div class="table-card">
+                        <h3 style="margin-bottom: 15px; color: var(--info-cyan);"><i class="fa-solid fa-calendar-days"></i> سجل حضور ودوام العمال</h3>
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>العامل</th>
+                                        <th>التاريخ</th>
+                                        <th>الحالة</th>
+                                        <th>الـحضور/الانصراف</th>
+                                        <th>الملاحظات والتأخير</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="attendance-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- نافذة دخول الإدارة Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h3 style="color: var(--primary-blue); margin-bottom: 15px;"><i class="fa-solid fa-user-lock"></i> دخول إدارة المركز</h3>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">أدخل كلمة السر للوصول للوحة التحكم (الافتراضية: 1234)</p>
+            <input type="password" id="adminPass" placeholder="كلمة السر" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc;">
+            <button onclick="checkAdminPassword()" class="btn-submit">دخول</button>
+            <button onclick="closeLoginModal()" style="background: transparent; border: none; margin-top: 10px; color: #777; cursor: pointer;">إلغاء</button>
+        </div>
+    </div>
+
+    <!-- قالب طباعة الإيصال (مخفي) -->
+    <div id="printable-receipt" style="display: none; padding: 20px; font-family: 'Cairo', sans-serif; text-align: center;">
+        <h2>مركز ومغسلة هرمز - HURMUZ</h2>
+        <p>اللاذقية - الصناعة الجديدة - هاتف: 0962270432</p>
+        <hr style="margin: 10px 0;">
+        <h3>إيصال استلام وتنفيذ خدمة</h3>
+        <p><strong>القسم:</strong> <span id="rec-dept"></span></p>
+        <p><strong>التاريخ:</strong> <span id="rec-date"></span></p>
+        <div id="rec-dynamic-content"></div>
+        <p style="font-size: 1.2rem; margin-top: 10px;"><strong>المبلغ المطلوب:</strong> <span id="rec-price"></span> ل.س</p>
+        <hr style="margin: 10px 0;">
+        <p>شكراً لزيارتكم واختياركم مركز هرمز!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 مغسلة ومركز هرمز للخدمات الشاملة - HURMUZ SERVICES EST. 2026</p>
+    </footer>
+
+    <!-- JavaScript code -->
+    <script>
+        // تحميل البيانات من LocalStorage مع ضمان توفر قيم افتراضية آمنة
+        let washCarsData = JSON.parse(localStorage.getItem('hurmuz_wash_cars')) || [];
+        let oilCarsData = JSON.parse(localStorage.getItem('hurmuz_oil_cars')) || [];
+        let carpetData = JSON.parse(localStorage.getItem('hurmuz_carpet_orders')) || [];
+        let homeData = JSON.parse(localStorage.getItem('hurmuz_home_orders')) || [];
+        let expensesData = JSON.parse(localStorage.getItem('hurmuz_expenses')) || [];
+        let attendanceData = JSON.parse(localStorage.getItem('hurmuz_attendance')) || [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const todayISO = new Date().toISOString().split('T')[0];
+            if(document.getElementById('expense-date')) document.getElementById('expense-date').value = todayISO;
+            if(document.getElementById('att-date')) document.getElementById('att-date').value = todayISO;
+        });
+
+        function saveToStorage() {
+            localStorage.setItem('hurmuz_wash_cars', JSON.stringify(washCarsData));
+            localStorage.setItem('hurmuz_oil_cars', JSON.stringify(oilCarsData));
+            localStorage.setItem('hurmuz_carpet_orders', JSON.stringify(carpetData));
+            localStorage.setItem('hurmuz_home_orders', JSON.stringify(homeData));
+            localStorage.setItem('hurmuz_expenses', JSON.stringify(expensesData));
+            localStorage.setItem('hurmuz_attendance', JSON.stringify(attendanceData));
+            
+            // عدم استدعاء renderDashboard إلا إذا كانت لوحة التحكم ظاهرة
+            if (document.getElementById('admin-panel').style.display === 'block') {
+                renderDashboard();
+            }
+        }
+
+        function switchPublicTab(tabId) {
+            const tabs = ['wash-public', 'oil-public', 'carpet-public', 'home-public'];
+            const btns = ['pub-btn-wash', 'pub-btn-oil', 'pub-btn-carpet', 'pub-btn-home'];
+
+            tabs.forEach(t => {
+                const el = document.getElementById(t);
+                if(el) el.classList.remove('active');
+            });
+            btns.forEach(b => {
+                const el = document.getElementById(b);
+                if(el) el.classList.remove('active');
+            });
+
+            const activeTab = document.getElementById(tabId);
+            if(activeTab) activeTab.classList.add('active');
+            const activeIndex = tabs.indexOf(tabId);
+            if(activeIndex !== -1 && document.getElementById(btns[activeIndex])) {
+                document.getElementById(btns[activeIndex]).classList.add('active');
+            }
+        }
+
+        function switchAdminTab(tab) {
+            const adminTabs = ['wash-tab', 'oil-tab', 'carpet-tab', 'home-tab', 'expenses-tab', 'attendance-tab'];
+            const adminBtns = ['tab-btn-wash', 'tab-btn-oil', 'tab-btn-carpet', 'tab-btn-home', 'tab-btn-expenses', 'tab-btn-attendance'];
+
+            adminTabs.forEach(t => {
+                const el = document.getElementById(t);
+                if(el) el.classList.remove('active');
+            });
+            adminBtns.forEach(b => {
+                const el = document.getElementById(b);
+                if(el) el.classList.remove('active');
+            });
+
+            const targetTab = document.getElementById(tab + '-tab');
+            const targetBtn = document.getElementById('tab-btn-' + tab);
+            if(targetTab) targetTab.classList.add('active');
+            if(targetBtn) targetBtn.classList.add('active');
+        }
+
+        function showPublicSite() {
+            document.getElementById('public-site').style.display = 'block';
+            document.getElementById('admin-panel').style.display = 'none';
+        }
+
+        function showAdminPanel() {
+            document.getElementById('public-site').style.display = 'none';
+            document.getElementById('admin-panel').style.display = 'block';
+            renderDashboard();
+        }
+
+        function openLoginModal() {
+            if(sessionStorage.getItem('hurmuz_admin_logged') === 'true') {
+                showAdminPanel();
+            } else {
+                document.getElementById('loginModal').style.display = 'flex';
+            }
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function checkAdminPassword() {
+            const pass = document.getElementById('adminPass').value;
+            if(pass === '1234') {
+                sessionStorage.setItem('hurmuz_admin_logged', 'true');
+                closeLoginModal();
+                showAdminPanel();
+            } else {
+                alert('كلمة السر خاطئة!');
+            }
+        }
+
+        function logoutAdmin() {
+            sessionStorage.removeItem('hurmuz_admin_logged');
+            showPublicSite();
+        }
+
+        // --- إضافة بيانات غسيل السيارات ---
+        function handleAddWashCar(e) {
+            e.preventDefault();
+            const plate = document.getElementById('wash-car-plate').value;
+            const model = document.getElementById('wash-car-model').value;
+            const service = document.getElementById('wash-car-service').value;
+            const price = parseFloat(document.getElementById('wash-car-price').value) || 0;
+            const phone = document.getElementById('wash-car-phone').value;
+
+            const now = new Date();
+            const newCar = {
+                id: Date.now(),
+                plate, model, service, price, phone,
+                status: 'قيد الانتظار',
+                date: now.toISOString().split('T')[0],
+                fullDate: now.toLocaleString('ar-SY')
+            };
+
+            washCarsData.unshift(newCar);
+            saveToStorage();
+            document.getElementById('wash-car-form').reset();
+        }
+
+        // --- إضافة بيانات تغيير الزيوت ---
+        function handleAddOilCar(e) {
+            e.preventDefault();
+            const plate = document.getElementById('oil-car-plate').value;
+            const model = document.getElementById('oil-car-model').value;
+            const service = document.getElementById('oil-car-service').value;
+            const brand = document.getElementById('oil-car-brand').value;
+            const price = parseFloat(document.getElementById('oil-car-price').value) || 0;
+            const phone = document.getElementById('oil-car-phone').value;
+
+            const now = new Date();
+            const newCar = {
+                id: Date.now(),
+                plate, model, service, brand, price, phone,
+                status: 'قيد الانتظار',
+                date: now.toISOString().split('T')[0],
+                fullDate: now.toLocaleString('ar-SY')
+            };
+
+            oilCarsData.unshift(newCar);
+            saveToStorage();
+            document.getElementById('oil-car-form').reset();
+        }
+
+        // --- إضافة بيانات غسيل السجاد ---
+        function handleAddCarpetOrder(e) {
+            e.preventDefault();
+            const clientName = document.getElementById('carpet-client-name').value;
+            const phone = document.getElementById('carpet-phone').value;
+            const address = document.getElementById('carpet-address').value;
+            const count = parseInt(document.getElementById('carpet-count').value) || 0;
+            const receiveDate = document.getElementById('carpet-receive-date').value;
+            const deliveryDate = document.getElementById('carpet-delivery-date').value;
+            const price = parseFloat(document.getElementById('carpet-price').value) || 0;
+            const notes = document.getElementById('carpet-notes').value;
+
+            const newOrder = {
+                id: Date.now(),
+                clientName, phone, address, count, receiveDate, deliveryDate, price, notes,
+                status: 'تم الاستلام (قيد الغسيل)',
+                date: receiveDate || new Date().toISOString().split('T')[0]
+            };
+
+            carpetData.unshift(newOrder);
+            saveToStorage();
+            document.getElementById('carpet-form').reset();
+        }
+
+        // --- إضافة بيانات تنظيف المنازل ---
+        function handleAddHomeOrder(e) {
+            e.preventDefault();
+            const clientName = document.getElementById('home-client-name').value;
+            const phone = document.getElementById('home-phone').value;
+            const address = document.getElementById('home-address').value;
+            const serviceType = document.getElementById('home-service-type').value;
+            const size = document.getElementById('home-size').value;
+            const dateTime = document.getElementById('home-date').value;
+            const price = parseFloat(document.getElementById('home-price').value) || 0;
+            const notes = document.getElementById('home-notes').value;
+
+            const orderDate = dateTime ? dateTime.split('T')[0] : new Date().toISOString().split('T')[0];
+
+            const newOrder = {
+                id: Date.now(),
+                clientName, phone, address, serviceType, size, dateTime, price, notes,
+                status: 'مؤكد (بانتظار التنفيذ)',
+                date: orderDate
+            };
+
+            homeData.unshift(newOrder);
+            saveToStorage();
+            document.getElementById('home-form').reset();
+        }
+
+        // --- إضافة المصروفات للحسابات ---
+        function handleAddExpense(e) {
+            e.preventDefault();
+            const category = document.getElementById('expense-category').value;
+            const title = document.getElementById('expense-title').value;
+            const amount = parseFloat(document.getElementById('expense-amount').value) || 0;
+            const date = document.getElementById('expense-date').value || new Date().toISOString().split('T')[0];
+
+            expensesData.unshift({ id: Date.now(), category, title, amount, date });
+            saveToStorage();
+            document.getElementById('expense-form').reset();
+        }
+
+        // --- إضافة بيانات دوام العمال ---
+        function handleAddAttendance(e) {
+            e.preventDefault();
+            const workerName = document.getElementById('att-worker-name').value;
+            const date = document.getElementById('att-date').value || new Date().toISOString().split('T')[0];
+            const status = document.getElementById('att-status').value;
+            const timeIn = document.getElementById('att-time-in').value;
+            const timeOut = document.getElementById('att-time-out').value;
+            const notes = document.getElementById('att-notes').value;
+
+            attendanceData.unshift({ id: Date.now(), workerName, date, status, timeIn, timeOut, notes });
+            saveToStorage();
+            document.getElementById('attendance-form').reset();
+        }
+
+        function toggleWashStatus(id) {
+            const statuses = ['قيد الانتظار', 'قيد الغسيل', 'جاهزة للتسليم', 'تم التسليم ✅'];
+            washCarsData = washCarsData.map(car => {
+                if(car.id === id) {
+                    let next = (statuses.indexOf(car.status) + 1) % statuses.length;
+                    car.status = statuses[next];
+                }
+                return car;
+            });
+            saveToStorage();
+        }
+
+        function toggleOilStatus(id) {
+            const statuses = ['قيد الانتظار', 'قيد الخدمة', 'تم التنفيذ وبانتظار التسليم', 'تم التسليم ✅'];
+            oilCarsData = oilCarsData.map(car => {
+                if(car.id === id) {
+                    let next = (statuses.indexOf(car.status) + 1) % statuses.length;
+                    car.status = statuses[next];
+                }
+                return car;
+            });
+            saveToStorage();
+        }
+
+        function toggleCarpetStatus(id) {
+            const statuses = ['تم الاستلام (قيد الغسيل)', 'قيد التجفيف والتغليف', 'جاهز للتسليم', 'تم التسليم للعميل ✅'];
+            carpetData = carpetData.map(order => {
+                if(order.id === id) {
+                    let next = (statuses.indexOf(order.status) + 1) % statuses.length;
+                    order.status = statuses[next];
+                }
+                return order;
+            });
+            saveToStorage();
+        }
+
+        function toggleHomeStatus(id) {
+            const statuses = ['مؤكد (بانتظار التنفيذ)', 'الفريق في موقع العمل', 'تم التنفيذ بالكامل ✅'];
+            homeData = homeData.map(order => {
+                if(order.id === id) {
+                    let next = (statuses.indexOf(order.status) + 1) % statuses.length;
+                    order.status = statuses[next];
+                }
+                return order;
+            });
+            saveToStorage();
+        }
+
+        function deleteWashCar(id) {
+            if(confirm('هل أنت تأكد من الحذف؟')) {
+                washCarsData = washCarsData.filter(c => c.id !== id);
+                saveToStorage();
+            }
+        }
+        function deleteOilCar(id) {
+            if(confirm('هل أنت تأكد من الحذف؟')) {
+                oilCarsData = oilCarsData.filter(c => c.id !== id);
+                saveToStorage();
+            }
+        }
+        function deleteCarpetOrder(id) {
+            if(confirm('هل أنت تأكد من حذف طلب السجاد؟')) {
+                carpetData = carpetData.filter(c => c.id !== id);
+                saveToStorage();
+            }
+        }
+        function deleteHomeOrder(id) {
+            if(confirm('هل أنت تأكد من حذف حجز تنظيف المنزل؟')) {
+                homeData = homeData.filter(h => h.id !== id);
+                saveToStorage();
+            }
+        }
+        function deleteExpense(id) {
+            if(confirm('هل أنت تأكد من حذف هذا المصروف؟')) {
+                expensesData = expensesData.filter(x => x.id !== id);
+                saveToStorage();
+            }
+        }
+        function deleteAttendance(id) {
+            if(confirm('هل أنت تأكد من حذف هذا السجل؟')) {
+                attendanceData = attendanceData.filter(x => x.id !== id);
+                saveToStorage();
+            }
+        }
+
+        function printReceipt(id, type) {
+            const dynamicDiv = document.getElementById('rec-dynamic-content');
+            dynamicDiv.innerHTML = '';
+
+            if(type === 'wash') {
+                const item = washCarsData.find(c => c.id === id);
+                if(!item) return;
+                document.getElementById('rec-dept').innerText = 'غسيل السيارات والدراجات';
+                document.getElementById('rec-date').innerText = item.fullDate || item.date;
+                document.getElementById('rec-price').innerText = item.price;
+                dynamicDiv.innerHTML = `
+                    <p><strong>اللوحة/المعرف:</strong> ${item.plate}</p>
+                    <p><strong>المركبة:</strong> ${item.model}</p>
+                    <p><strong>الخدمة:</strong> ${item.service}</p>
+                    ${item.phone ? `<p><strong>الجوال:</strong> ${item.phone}</p>` : ''}
+                `;
+            } else if(type === 'oil') {
+                const item = oilCarsData.find(c => c.id === id);
+                if(!item) return;
+                document.getElementById('rec-dept').innerText = 'تغيير الزيوت والسوائل';
+                document.getElementById('rec-date').innerText = item.fullDate || item.date;
+                document.getElementById('rec-price').innerText = item.price;
+                dynamicDiv.innerHTML = `
+                    <p><strong>اللوحة/المعرف:</strong> ${item.plate}</p>
+                    <p><strong>المركبة:</strong> ${item.model}</p>
+                    <p><strong>الخدمة:</strong> ${item.service}</p>
+                    <p><strong>نوع/عيار الزيت:</strong> ${item.brand}</p>
+                `;
+            } else if(type === 'carpet') {
+                const item = carpetData.find(c => c.id === id);
+                if(!item) return;
+                document.getElementById('rec-dept').innerText = 'قسم غسيل السجاد';
+                document.getElementById('rec-date').innerText = item.date;
+                document.getElementById('rec-price').innerText = item.price;
+                dynamicDiv.innerHTML = `
+                    <p><strong>اسم العميل:</strong> ${item.clientName}</p>
+                    <p><strong>الجوال:</strong> ${item.phone}</p>
+                    <p><strong>العنوان:</strong> ${item.address}</p>
+                    <p><strong>عدد السجادات:</strong> ${item.count}</p>
+                    <p><strong>تاريخ الاستلام:</strong> ${item.receiveDate}</p>
+                    <p><strong>التسليم المتوقع:</strong> ${item.deliveryDate}</p>
+                    ${item.notes ? `<p><strong>ملاحظات:</strong> ${item.notes}</p>` : ''}
+                `;
+            } else if(type === 'home') {
+                const item = homeData.find(h => h.id === id);
+                if(!item) return;
+                document.getElementById('rec-dept').innerText = 'قسم تنظيف المنازل';
+                document.getElementById('rec-date').innerText = item.date;
+                document.getElementById('rec-price').innerText = item.price;
+                dynamicDiv.innerHTML = `
+                    <p><strong>اسم العميل:</strong> ${item.clientName}</p>
+                    <p><strong>الجوال:</strong> ${item.phone}</p>
+                    <p><strong>العنوان:</strong> ${item.address}</p>
+                    <p><strong>الخدمة المطلوبة:</strong> ${item.serviceType}</p>
+                    <p><strong>المساحة/الغرف:</strong> ${item.size || '-'}</p>
+                    <p><strong>موعد التنفيذ:</strong> ${item.dateTime ? item.dateTime.replace('T', ' ') : '-'}</p>
+                `;
+            }
+
+            const recElement = document.getElementById('printable-receipt');
+            recElement.style.display = 'block';
+            window.print();
+            recElement.style.display = 'none';
+        }
+
+        // دالة المساعدة الآمنة للتحقق من التواريخ دون أخطاء NaN
+        function isDateInFilterRange(itemDateStr, filterType) {
+            if (filterType === 'all' || !itemDateStr) return true;
+            
+            const now = new Date();
+            const todayStr = now.toISOString().split('T')[0];
+
+            if (filterType === 'today') {
+                return itemDateStr === todayStr;
+            }
+
+            const itemDate = new Date(itemDateStr);
+            if (isNaN(itemDate.getTime())) return true; // حماية من التواريخ غير الصالحة
+
+            const diffTime = now - itemDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+            if (filterType === 'week') {
+                return diffDays >= 0 && diffDays <= 7;
+            } else if (filterType === 'month') {
+                return diffDays >= 0 && diffDays <= 30;
+            }
+            return true;
+        }
+
+        // --- عرض وتحديث الجداول والإحصائيات الحركية بشكل آمن بالكامل ---
+        function renderDashboard() {
+            const filterSelect = document.getElementById('financial-filter');
+            const filterType = filterSelect ? filterSelect.value : 'today';
+
+            // 1. غسيل السيارات
+            const washTbody = document.getElementById('wash-table-body');
+            washTbody.innerHTML = '';
+            let washIncomeTotal = 0, washActive = 0;
+            washCarsData.forEach(car => {
+                washIncomeTotal += Number(car.price) || 0;
+                if(car.status !== 'تم التسليم ✅') washActive++;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${car.plate}</strong></td>
+                    <td>${car.model}</td>
+                    <td>${car.service}</td>
+                    <td>${car.price} ل.س</td>
+                    <td><span class="badge ${car.status === 'تم التسليم ✅' ? 'badge-done' : 'badge-waiting'}">${car.status}</span></td>
+                    <td>
+                        <button onclick="toggleWashStatus(${car.id})" class="action-btn btn-status" title="تغيير الحالة"><i class="fa-solid fa-arrows-rotate"></i></button>
+                        <button onclick="printReceipt(${car.id}, 'wash')" class="action-btn btn-print" title="طباعة"><i class="fa-solid fa-print"></i></button>
+                        <button onclick="deleteWashCar(${car.id})" class="action-btn btn-delete" title="حذف"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                `;
+                washTbody.appendChild(tr);
+            });
+            document.getElementById('stat-wash-total').innerText = washCarsData.length;
+            document.getElementById('stat-wash-active').innerText = washActive;
+            document.getElementById('stat-wash-income').innerText = washIncomeTotal.toLocaleString();
+
+            // 2. تغيير الزيوت
+            const oilTbody = document.getElementById('oil-table-body');
+            oilTbody.innerHTML = '';
+            let oilIncomeTotal = 0, oilActive = 0;
+            oilCarsData.forEach(car => {
+                oilIncomeTotal += Number(car.price) || 0;
+                if(car.status !== 'تم التسليم ✅') oilActive++;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${car.plate}</strong></td>
+                    <td>${car.model}</td>
+                    <td>${car.service}</td>
+                    <td><strong>${car.brand || '-'}</strong></td>
+                    <td>${car.price} ل.س</td>
+                    <td><span class="badge ${car.status === 'تم التسليم ✅' ? 'badge-done' : 'badge-waiting'}">${car.status}</span></td>
+                    <td>
+                        <button onclick="toggleOilStatus(${car.id})" class="action-btn btn-status" title="تغيير الحالة"><i class="fa-solid fa-arrows-rotate"></i></button>
+                        <button onclick="printReceipt(${car.id}, 'oil')" class="action-btn btn-print" title="طباعة"><i class="fa-solid fa-print"></i></button>
+                        <button onclick="deleteOilCar(${car.id})" class="action-btn btn-delete" title="حذف"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                `;
+                oilTbody.appendChild(tr);
+            });
+            document.getElementById('stat-oil-total').innerText = oilCarsData.length;
+            document.getElementById('stat-oil-active').innerText = oilActive;
+            document.getElementById('stat-oil-income').innerText = oilIncomeTotal.toLocaleString();
+
+            // 3. غسيل السجاد
+            const carpetTbody = document.getElementById('carpet-table-body');
+            carpetTbody.innerHTML = '';
+            let carpetIncomeTotal = 0, carpetActive = 0;
+            carpetData.forEach(order => {
+                carpetIncomeTotal += Number(order.price) || 0;
+                if(!order.status.includes('تم التسليم للعميل')) carpetActive++;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${order.clientName}</strong><br><small>${order.phone}</small></td>
+                    <td>${order.address}</td>
+                    <td><strong>${order.count} قطع</strong></td>
+                    <td><small>استلام: ${order.receiveDate}<br>تسليم: ${order.deliveryDate}</small></td>
+                    <td>${order.price} ل.س</td>
+                    <td><span class="badge ${order.status.includes('تم التسليم') ? 'badge-done' : 'badge-waiting'}">${order.status}</span></td>
+                    <td>
+                        <button onclick="toggleCarpetStatus(${order.id})" class="action-btn btn-status" title="تغيير الحالة"><i class="fa-solid fa-arrows-rotate"></i></button>
+                        <button onclick="printReceipt(${order.id}, 'carpet')" class="action-btn btn-print" title="طباعة"><i class="fa-solid fa-print"></i></button>
+                        <button onclick="deleteCarpetOrder(${order.id})" class="action-btn btn-delete" title="حذف"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                `;
+                carpetTbody.appendChild(tr);
+            });
+            document.getElementById('stat-carpet-total').innerText = carpetData.length;
+            document.getElementById('stat-carpet-active').innerText = carpetActive;
+            document.getElementById('stat-carpet-income').innerText = carpetIncomeTotal.toLocaleString();
+
+            // 4. تنظيف المنازل
+            const homeTbody = document.getElementById('home-table-body');
+            homeTbody.innerHTML = '';
+            let homeIncomeTotal = 0, homeActive = 0;
+            homeData.forEach(order => {
+                homeIncomeTotal += Number(order.price) || 0;
+                if(!order.status.includes('تم التنفيذ بالكامل')) homeActive++;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${order.clientName}</strong><br><small>${order.phone}</small></td>
+                    <td>${order.address}</td>
+                    <td>${order.serviceType}<br><small>(${order.size || 'غير محدد'})</small></td>
+                    <td><small>${order.dateTime ? order.dateTime.replace('T', ' ') : '-'}</small></td>
+                    <td>${order.price} ل.س</td>
+                    <td><span class="badge ${order.status.includes('تم التنفيذ') ? 'badge-done' : 'badge-waiting'}">${order.status}</span></td>
+                    <td>
+                        <button onclick="toggleHomeStatus(${order.id})" class="action-btn btn-status" title="تغيير الحالة"><i class="fa-solid fa-arrows-rotate"></i></button>
+                        <button onclick="printReceipt(${order.id}, 'home')" class="action-btn btn-print" title="طباعة"><i class="fa-solid fa-print"></i></button>
+                        <button onclick="deleteHomeOrder(${order.id})" class="action-btn btn-delete" title="حذف"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                `;
+                homeTbody.appendChild(tr);
+            });
+            document.getElementById('stat-home-total').innerText = homeData.length;
+            document.getElementById('stat-home-active').innerText = homeActive;
+            document.getElementById('stat-home-income').innerText = homeIncomeTotal.toLocaleString();
+
+            // 5. حسابات الحسابات والمصروفات حسب النطاق الزمني
+            let filteredWashIncome = 0, filteredWashCount = 0;
+            washCarsData.forEach(item => {
+                if(isDateInFilterRange(item.date, filterType)) {
+                    filteredWashIncome += Number(item.price) || 0;
+                    filteredWashCount++;
+                }
+            });
+
+            let filteredOilIncome = 0, filteredOilCount = 0;
+            oilCarsData.forEach(item => {
+                if(isDateInFilterRange(item.date, filterType)) {
+                    filteredOilIncome += Number(item.price) || 0;
+                    filteredOilCount++;
+                }
+            });
+
+            let filteredCarpetIncome = 0, filteredCarpetCount = 0, filteredCarpetItems = 0;
+            carpetData.forEach(item => {
+                if(isDateInFilterRange(item.date, filterType)) {
+                    filteredCarpetIncome += Number(item.price) || 0;
+                    filteredCarpetCount++;
+                    filteredCarpetItems += (parseInt(item.count) || 0);
+                }
+            });
+
+            let filteredHomeIncome = 0, filteredHomeCount = 0;
+            homeData.forEach(item => {
+                if(isDateInFilterRange(item.date, filterType)) {
+                    filteredHomeIncome += Number(item.price) || 0;
+                    filteredHomeCount++;
+                }
+            });
+
+            let filteredTotalIncome = filteredWashIncome + filteredOilIncome + filteredCarpetIncome + filteredHomeIncome;
+
+            // تحديث قيم جدول التقرير
+            if(document.getElementById('rep-wash-count')) document.getElementById('rep-wash-count').innerText = filteredWashCount;
+            if(document.getElementById('rep-wash-sum')) document.getElementById('rep-wash-sum').innerText = filteredWashIncome.toLocaleString() + ' ل.س';
+
+            if(document.getElementById('rep-oil-count')) document.getElementById('rep-oil-count').innerText = filteredOilCount;
+            if(document.getElementById('rep-oil-sum')) document.getElementById('rep-oil-sum').innerText = filteredOilIncome.toLocaleString() + ' ل.س';
+
+            if(document.getElementById('rep-carpet-count')) document.getElementById('rep-carpet-count').innerText = filteredCarpetCount;
+            if(document.getElementById('rep-carpet-items')) document.getElementById('rep-carpet-items').innerText = filteredCarpetItems;
+            if(document.getElementById('rep-carpet-sum')) document.getElementById('rep-carpet-sum').innerText = filteredCarpetIncome.toLocaleString() + ' ل.س';
+
+            if(document.getElementById('rep-home-count')) document.getElementById('rep-home-count').innerText = filteredHomeCount;
+            if(document.getElementById('rep-home-sum')) document.getElementById('rep-home-sum').innerText = filteredHomeIncome.toLocaleString() + ' ل.س';
+
+            // حساب المفلتر للمصروفات
+            let filteredExpenses = 0;
+            const expTbody = document.getElementById('expenses-table-body');
+            expTbody.innerHTML = '';
+            expensesData.forEach(exp => {
+                if(isDateInFilterRange(exp.date, filterType)) {
+                    const amt = Number(exp.amount) || 0;
+                    filteredExpenses += amt;
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${exp.date}</td>
+                        <td><strong>${exp.category}</strong></td>
+                        <td>${exp.title}</td>
+                        <td><strong style="color:var(--danger-red);">${amt.toLocaleString()} ل.س</strong></td>
+                        <td><button onclick="deleteExpense(${exp.id})" class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button></td>
+                    `;
+                    expTbody.appendChild(tr);
+                }
+            });
+
+            // تحديث بطاقات إحصائيات الحسابات
+            if(document.getElementById('stat-total-income')) document.getElementById('stat-total-income').innerText = filteredTotalIncome.toLocaleString();
+            if(document.getElementById('stat-total-expenses')) document.getElementById('stat-total-expenses').innerText = filteredExpenses.toLocaleString();
+            if(document.getElementById('stat-net-profit')) document.getElementById('stat-net-profit').innerText = (filteredTotalIncome - filteredExpenses).toLocaleString();
+
+            // 6. عرض دوام العمال
+            const attTbody = document.getElementById('attendance-table-body');
+            attTbody.innerHTML = '';
+            attendanceData.forEach(att => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${att.workerName}</strong></td>
+                    <td>${att.date}</td>
+                    <td><span class="badge ${att.status === 'حاضر' ? 'badge-ready' : 'badge-waiting'}">${att.status}</span></td>
+                    <td><small>${att.timeIn || '--'} - ${att.timeOut || '--'}</small></td>
+                    <td>${att.notes || '-'}</td>
+                    <td><button onclick="deleteAttendance(${att.id})" class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button></td>
+                `;
+                attTbody.appendChild(tr);
+            });
+            if(document.getElementById('stat-attendance-today')) document.getElementById('stat-attendance-today').innerText = attendanceData.length;
+        }
+    </script>
+</body>
+</html>
