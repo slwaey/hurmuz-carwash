@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز هرمز للخدمات الشاملة | HURMUZ SERVICES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0b2e59;
+            --accent-gold: #c5a059;
+            --light-bg: #f8f9fa;
+            --dark-text: #1a1a1a;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --carpet-brown: #8b5a2b;
+            --home-green: #2e8b57;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--light-bg); color: var(--dark-text); line-height: 1.6; }
+
+        /* Navigation Bar */
+        header { background-color: #ffffff; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; max-width: 1350px; margin: 0 auto; padding: 0.8rem 2rem; }
+        .logo-container { display: flex; align-items: center; flex-direction: row-reverse; gap: 20px; }
+        .logo-container img { height: 85px; width: 85px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-gold); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .brand-name { text-align: right; }
+        .brand-name h1 { font-size: 1.6rem; color: var(--primary-blue); font-weight: 800; line-height: 1.2; }
+        .brand-name span { font-size: 0.9rem; color: var(--accent-gold); font-weight: 700; }
+        
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .cta-btn { background: linear-gradient(135deg, var(--primary-blue), #16427b); color: white; padding: 0.6rem 1.4rem; border-radius: 25px; text-decoration: none; font-weight: 700; border: 2px solid var(--accent-gold); transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .cta-btn:hover { background: var(--accent-gold); color: var(--primary-blue); }
+
+        /* Hero Section */
+        .hero { margin-top: 80px; background: linear-gradient(rgba(11, 46, 89, 0.85), rgba(11, 46, 89, 0.9)), url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; color: white; padding: 90px 20px; text-align: center; }
+        .hero-content { max-width: 850px; margin: 0 auto; }
+        .hero img { width: 260px; height: 260px; border-radius: 50%; border: 6px solid var(--accent-gold); margin-bottom: 25px; box-shadow: 0 0 30px rgba(197, 160, 89, 0.6); object-fit: cover; }
+        .hero h2 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #e0e0e0; }
+
+        /* Services Section */
+        .services { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h3 { font-size: 2.2rem; color: var(--primary-blue); position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-title h3::after { content: ''; position: absolute; bottom: 0; right: 50%; transform: translateX(50%); width: 80px; height: 3px; background-color: var(--accent-gold); }
+
+        .public-service-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .pub-tab-btn { padding: 12px 25px; border: 2px solid var(--primary-blue); background: white; color: var(--primary-blue); font-size: 1rem; font-weight: 700; border-radius: 30px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+        .pub-tab-btn.active, .pub-tab-btn:hover { background: var(--primary-blue); color: white; box-shadow: 0 5px 15px rgba(11, 46, 89, 0.2); }
+
+        .pub-tab-content { display: none; }
+        .pub-tab-content.active { display: block; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: white; padding: 30px; border-radius: 15px; box-shadow: var(--card-shadow); text-align: center; border-top: 4px solid var(--primary-blue); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-8px); border-top-color: var(--accent-gold); }
+        .service-card h4 { font-size: 1.3rem; color: var(--primary-blue); margin-bottom: 15px; }
+
+        /* Contact Section */
+        .contact { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+        .contact-box { background: white; border-radius: 20px; box-shadow: var(--card-shadow); padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .contact-info h4 { font-size: 1.8rem; color: var(--primary-blue); margin-bottom: 20px; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 1.1rem; }
+        .info-item i { font-size: 1.3rem; color: var(--accent-gold); width: 30px; }
+        .info-item a { color: var(--dark-text); text-decoration: none; }
+
+        footer { background-color: #061a33; color: white; text-align: center; padding: 25px 20px; border-top: 3px solid var(--accent-gold); }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h2 { font-size: 2rem; }
+            .hero img { width: 190px; height: 190px; }
+            .public-service-tabs { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.webp" alt="لوجو مغسلة هرمز" onerror="this.src='https://via.placeholder.com/85'">
+                <div class="brand-name">
+                    <h1>هرمز HURMUZ</h1>
+                    <span>خدمات المركبات والعناية بالمنزل VIP SERVICES</span>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <a href="tel:+963986176598" class="cta-btn"><i class="fa-solid fa-phone"></i> اتصال</a>
+                <a href="https://wa.me/963986176598?text=أهلاً%20مغسلة%20هرمز،%20أود%20حجز%20موعد" target="_blank" class="cta-btn" style="background: #25D366; border-color: #25D366; color: white;">
+                    <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61593517975532" target="_blank" class="cta-btn" style="background: #1877F2; border-color: #1877F2; color: white;">
+                    <i class="fa-brands fa-facebook"></i> فيسبوك
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="logo.webp" alt="لوجو هرمز الشعار المعتمد" onerror="this.src='https://via.placeholder.com/260'">
+            <h2>خدمات العناية الشاملة لمركبتك ومنزلك</h2>
+            <p>غسيل وتلميع السيارات، غسيل السجاد الآلي الحديث، وخدمات تنظيف واعتناء المنازل بأحدث المعدات</p>
+            <a href="#services" class="cta-btn" style="padding: 0.8rem 2rem; font-size: 1.1rem;">استكشف خدماتنا</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h3>خدماتنا المتميزة</h3>
+        </div>
+
+        <div class="public-service-tabs">
+            <button class="pub-tab-btn active" onclick="switchPublicTab('wash-public')" id="pub-btn-wash">
+                <i class="fa-solid fa-soap"></i> السيارات والدراجات
+            </button>
+            <button class="pub-tab-btn" onclick="switchPublicTab('oil-public')" id="pub-btn-oil">
+                <i class="fa-solid fa-oil-can"></i> الزيوت والسوائل
+            </button>
+            <button class="pub-tab-btn" onclick="switchPublicTab('carpet-public')" id="pub-btn-carpet">
+                <i class="fa-solid fa-rug"></i> غسيل السجاد
+            </button>
+            <button class="pub-tab-btn" onclick="switchPublicTab('home-public')" id="pub-btn-home">
+                <i class="fa-solid fa-house-chimney-window"></i> تنظيف المنازل
+            </button>
+        </div>
+
+        <!-- تبويب 1 -->
+        <div id="wash-public" class="pub-tab-content active">
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="service1.webp" alt="غسيل خارجي" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <h4>غسيل خارجي احترافي للسيارات</h4>
+                    <p>غسيل بتقنية الرغوة الكثيفة وضغط الماء العالي مع التنظيف الدقيق للإطارات والهيكل الخارجي.</p>
+                </div>
+                <div class="service-card" style="border-top-color: var(--accent-gold);">
+                    <img src="service4.webp" alt="غسيل دراجات نارية" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <h4>🏍️ غسيل وتلميع الدراجات النارية</h4>
+                    <p>تنظيف دقيق ومحترف للأسطح الميكانيكية، السلاسل، والهيكل الخارجي للدراجة النارية مع المواد الحافظة.</p>
+                </div>
+                <div class="service-card">
+                    <img src="service4.webp" alt="تنظيف داخلي" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <h4>تنظيف وتفصيل الداخلي للسيارات</h4>
+                    <p>تنظيف الفرش والمقاعد بالفرشاة والمواد الخاصة، شفط الأتربة، وتعقيم التابلوه وفتحات التكييف.</p>
+                </div>
+                <div class="service-card">
+                    <img src="service7.webp" alt="تلميع وخدمات VIP" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <h4>تلميع وخدمات VIP</h4>
+                    <p>إزالة الشوائب، تلميع الطلاء الخارجي، وحماية الأسطح لإعطائها لمعاناً كالمصنع.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- تبويب 2 -->
+        <div id="oil-public" class="pub-tab-content">
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="service9.webp" alt="تغيير زيت المحرك" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <h4>تغيير زيت المحرك والفلتر للسيارات</h4>
+                    <p>توفير أفضل الزيوت العالمية (BM LOOP, Mannol) بعيارات متنوعة لكافة محركات السيارات.</p>
+                </div>
+                <div class="service-card" style="border-top-color: var(--accent-gold);">
+                    <img src="service1.webp" alt="تغيير زيت الدراجات النارية" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <h4>🏍️ تغيير زيت الدراجات النارية (4T / 2T)</h4>
+                    <p>زيوت مخصصة للدراجات النارية ذات أداء عالي تحمل درجات الحرارة العالية وحماية الدبرياج والمحرك.</p>
+                </div>
+                <div class="service-card">
+                    <img src="service4.webp" alt="ماء رادياتير" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <h4>تغيير سائل التبريد (أخضر / أحمر)</h4>
+                    <p>تفريغ وتعبئة ماء رادياتير أصلي مانع للتجمد والرغوة لحماية المحرك من الحرارة العالية.</p>
+                </div>
+                <div class="service-card">
+                    <img src="service7.webp" alt="صيانة السوائل الشاملة" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <h4>فحص وصيانة السوائل الشاملة</h4>
+                    <p>فحص زيت الفرامل، الباور، وتغيير جميع الفلاتر (زيت، هواء، تكييف) بأعلى معايير الجودة.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- تبويب 3 -->
+        <div id="carpet-public" class="pub-tab-content">
+            <div class="services-grid">
+                <div class="service-card" style="border-top-color: var(--carpet-brown);">
+                    <i class="fa-solid fa-rug" style="font-size: 3rem; color: var(--carpet-brown); margin-bottom: 15px;"></i>
+                    <h4>غسيل آلي للتنظيف والتجفيف</h4>
+                    <p>غسيل السجاد بآلات أوتوماتيكية متطورة ومواد شامبو مخصصة للحفاظ على جودة ولون الأنسجة.</p>
+                </div>
+                <div class="service-card" style="border-top-color: var(--carpet-brown);">
+                    <i class="fa-solid fa-truck-ramp-box" style="font-size: 3rem; color: var(--carpet-brown); margin-bottom: 15px;"></i>
+                    <h4>خدمة الاستلام والتسليم من الباب</h4>
+                    <p>استلام السجاد من منزلكم وإعادته مغسولاً ومعطراً ومغلفاً بالكامل فور الانتهاء.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- تبويب 4 -->
+        <div id="home-public" class="pub-tab-content">
+            <div class="services-grid">
+                <div class="service-card" style="border-top-color: var(--home-green);">
+                    <i class="fa-solid fa-broom" style="font-size: 3rem; color: var(--home-green); margin-bottom: 15px;"></i>
+                    <h4>تنظيف وتلميع منازل شامل</h4>
+                    <p>تنظيف الأرضيات والواجهات والشبابيك، وتعقيم كامل للمطابخ والحمامات بواسطة كادر متخصص.</p>
+                </div>
+                <div class="service-card" style="border-top-color: var(--home-green);">
+                    <i class="fa-solid fa-couch" style="font-size: 3rem; color: var(--home-green); margin-bottom: 15px;"></i>
+                    <h4>تنظيف الكنب والمفروشات بالبخار</h4>
+                    <p>إزالة الشوائب والبقع الصعبة من الكنب والستائر والمجالس بأجهزة التنظيف بالبخار الفعالة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h4>زورونا اليوم أو تواصلوا معنا</h4>
+                <p style="margin-bottom: 25px; color: #666;">نسعد بتقديم أفضل الخدمات الشاملة لكم في مركز هرمز.</p>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>الموقع: +963986176598</span>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span dir="ltr">+963986176598</span>
+                </div>
+                <div class="info-item">
+                    <i class="fa-brands fa-facebook"></i>
+                    <a href="https://www.facebook.com/profile.php?id=61593517975532" target="_blank">صفحتنا على فيسبوك</a>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>نستقبلكم يومياً من الساعة 8:00 صباحاً حتى 10:00 مساءً</span>
+                </div>
+            </div>
+            <div style="width: 100%; height: 280px; border-radius: 15px; overflow: hidden; border: 2px solid var(--accent-gold);">
+                <iframe src="https://maps.google.com/maps?q=35.537917,35.846667&z=17&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 مغسلة ومركز هرمز للخدمات الشاملة - HURMUZ SERVICES EST. 2026 | <a href="https://www.facebook.com/profile.php?id=61593517975532" target="_blank">تابعنا على فيسبوك</a></p>
+    </footer>
+
+    <script>
+        function switchPublicTab(tabId) {
+            const tabs = ['wash-public', 'oil-public', 'carpet-public', 'home-public'];
+            const btns = ['pub-btn-wash', 'pub-btn-oil', 'pub-btn-carpet', 'pub-btn-home'];
+
+            tabs.forEach(t => document.getElementById(t).classList.remove('active'));
+            btns.forEach(b => document.getElementById(b).classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            const activeIndex = tabs.indexOf(tabId);
+            document.getElementById(btns[activeIndex]).classList.add('active');
+        }
+    </script>
+</body>
+</html>
